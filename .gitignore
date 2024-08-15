@@ -1,0 +1,6 @@
+venv
+chromadb
+faiss_index
+chroma.log
+commentaire.txt
+config.txt
