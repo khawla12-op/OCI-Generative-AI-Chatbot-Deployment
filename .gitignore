@@ -4,3 +4,4 @@ faiss_index
 chroma.log
 commentaire.txt
 config.txt
+chroma.sqlite3
