@@ -1,6 +1,0 @@
-#Starting the chroma server:
-chroma run --host localhost --port 8000 --path ./chroma.sqlite3
-#Run the streamlit app:
-streamlit run demo-sessions-v1.py
-As vector database here we have two options:
-chroma or faiss vector database
