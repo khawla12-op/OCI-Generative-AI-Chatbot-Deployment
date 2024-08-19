@@ -68,7 +68,7 @@ client = langsmith.Client()
 # Step 5 - evaluate model
 
 chain_results = client.run_on_dataset(
-    dataset_name="AIFoundationsDS-111",
+    dataset_name="AIFoundationsDS-112",
     llm_or_chain_factory=chain,
     evaluation=eval_config,
     concurrency_level=5,
