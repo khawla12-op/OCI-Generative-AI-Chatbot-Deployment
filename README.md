@@ -110,6 +110,7 @@ In this guide, I will walk through the process of building and deploying an OCI 
   
   ssh -i ubuntu-vm-priv.key ubuntu@<VM_IP_Address>
   ```
+  ![System Architecture](https://github.com/khawla12-op/OCI-Generative-AI-Chatbot-Deployment/blob/main/Practical_Guide/connecting%20to%20vm%20via%20ssh.png)
 - Upgrade Ubuntu packages:
    ```bash
    sudo apt update && sudo apt upgrade
@@ -125,6 +126,7 @@ In this guide, I will walk through the process of building and deploying an OCI 
    source ouenv/bin/activate
   ```
 - Install dependencies from requirements.txt (copy the files from your local machine to the VM first):
+   ![System Architecture](https://github.com/khawla12-op/OCI-Generative-AI-Chatbot-Deployment/blob/main/Practical_Guide/Download%20files.png)
   ```bash
     pip install -r requirements.txt
   ```
@@ -133,21 +135,29 @@ In this guide, I will walk through the process of building and deploying an OCI 
 ```bash
 sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport 8501 -j ACCEPT
  ```
+- Setup subnet security list to open port 8501: From Compute select your instance , Select subnet for your instance and Select the default security list and add port 8501 for TCP traffic
+-  ![System Architecture](https://github.com/khawla12-op/OCI-Generative-AI-Chatbot-Deployment/blob/main/Practical_Guide/Add%20rules.png)
+  
 ### 5.Indexing Documents and Running the Chatbot
 - Index the documents:
 ```bash
 python3 demo-chroma-create-v1.py
 ```
+
+ ![System Architecture](https://github.com/khawla12-op/OCI-Generative-AI-Chatbot-Deployment/blob/main/Practical_Guide/Running%20demo-chroma-create-v1.py.png)
 - Start the chroma server:
 ```bash
 chroma run --host localhost --port 8000 --path ./chroma.sqlite3
 ```
+ ![System Architecture](https://github.com/khawla12-op/OCI-Generative-AI-Chatbot-Deployment/blob/main/Practical_Guide/starting%20the%20chroma%20server.png)
 - Run the Streamlit Application:
 ```bash
 
 streamlit run demo-ou-chatbot-chroma-final-v1.py --server.port 8501
 ```
-
+![System Architecture](https://github.com/khawla12-op/OCI-Generative-AI-Chatbot-Deployment/blob/main/Practical_Guide/running%20the%20streamlit%20app.png)
+### 6.Output:
+![System Architecture](https://github.com/khawla12-op/OCI-Generative-AI-Chatbot-Deployment/blob/main/Practical_Guide/Chatbot%20interface.png)
 
 
 
