@@ -94,7 +94,7 @@ This repository contains various files for learning and certification purposes. 
 ## Step-by-Step Guide
 
 In this guide, I will walk through the process of building and deploying an OCI Generative AI chatbot.
-
+![System Architecture](https://github.com/khawla12-op/OCI-Generative-AI-Chatbot-Deployment/blob/main/Flow%20Architecture.png)
 ### 1. Setting up the OCI Environment
 
 - Create a VM instance with the following configuration:
